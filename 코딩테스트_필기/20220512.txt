@@ -1,0 +1,54 @@
+4. 포인터
+- 메모리의 주소 : 메모리 내에서의 위치로 1byte마다 매겨진 번호
+- 포인터 변수 : 주소를 저장하는 변수
+- 선언 또는 할당받지 않은 주소를 가리킬 수 없다.
+&변수명 : 변수의 주소
+*주소 : 주소에 저장된 값
+
+포인터 변수에 임의의 주소값을 지정할 경우
+사용권장x 그 포인터 변수가 운영체제와 관련되어있을 수 있기 때문
+
+주소값x 그 주소에 있는 값!
+
+char *pChar
+int *plnt;
+double *pDouble;
+printf("%d\n",sizeof(pChar));
+printf("%d\n",sizeof(plnt));
+printf("%d\n",sizeof(pDouble));
+포인터 변수 자체는 고정 크기(8byte) : 포인터 변수는 다양한
+자료형으로 선언될 수 있지만 포인터 변수 자체는 고정 크기이다.
+
+char *pChar;
+int *plnt;
+double *pDouble;
+printf("%d\n",sizeof(*pChar)); //1
+printf("%d\n",sizeof(*plnt)); //4
+printf("%d\n",sizeof(*pDouble));  //8
+
+- 배열과 포인터
+- 정적배열은 프로그램 실행 중에 크기를 변경하거나 임의로 배열을
+해제하여 버릴 수 없는 구조이다.
+- 프로그램 실행 중 메모리를 새로 할당 받는 것을
+  '동적할당' 이라고 하며 이는 포인터 변수를 써야 가능하다.
+
+포인터 배열
+- 포인터 배열은 문자열의 첫 글자의 주소를 기억하고 있다.
+- 포인터 배열은 흩어져 있는 여러 개의 메모리 공간을 하나의 배열로
+모아 다루는 편의성을 제공한다.
+
+동적할당 : 프로그램 실행 중에 필요한 메모리를 확보
+- malloc() 함수를 이용하여 
+리턴타입은 void * (어떤 타입의 포인터 변수도 가능)이다.
+- 따라서 포인터 변수가 가리키는 데이터 타입에 따라 형변환(cast)를
+해야한다.
+- 예) 사이즈가 10개인 int 타입의 배열을 동적 할당 해보자.
+	1. int타입의 10개 사이즈 지정=> (sizeof(int)*10)
+	2. int타입의 10개 사이즈 할당=> malloc(sizeof(int)*10)
+	3. pointer에 할당 int *my = malloc(sizeof(int)*10)
+	   (내가 할당하고자 하는 타입과 pointer변수타입은 같아야함.)
+	4. pointer변수 타입에 맞게 형변환 => int *my = (int*)malloc(sizeof(int)*10)
+
+
+-char param[20] = {"cos pro"};
+char *ch1 = (char*)malloc(sizeof(char)*strlen(param));

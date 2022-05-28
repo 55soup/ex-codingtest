@@ -1,0 +1,96 @@
+5. 함수
+
+함수 : 프로그램을 작게 나누어서 일을 하도록 하는 실행 단위
+
+int func_a();  //선언부
+
+int main(){
+   func_a();  //호출부
+   return 0;
+}
+int func_a(){ //정의부
+   return 0;
+}
+
+
+// 선언부가 필요없음.
+int solution(){
+   int answer;
+	...
+   return answer;
+}
+int main(){
+   solution();
+   return 0;
+}
+
+이처럼 호출부가 정의부보다 먼저 나오는 경우
+반드시 선언부가 필요하다.
+
+
+- 함수의 리턴 타입 : 결과의 리턴 타입을 기술하되
+리턴할 내용이 없으면 void로 반드시 기술한다.
+왜냐하면 리턴 타입을 생략하는 경우 C언어는 int로 처리하고자 한다.
+
+- 매개변수 : 호출한 함수와 호출을 당하는 함수 사이의
+매개체 가 되는 변수를 매개변수라고 한다.
+매개변수는 타입과 개수, 순서를 일치시켜야한다.
+
+함수 매개 전달(값 복사)
+#include <stdio.h>
+int add(int x, int y){
+....
+
+main의 x,y 값이 다른 함수로 넘어갈 때 값만 복사된다.
+
+
+- 함수 매개 : 값 복사의 실패사례
+  - a, b의 값을 복사해 갔기 때문이다.
+
+#include <stdio.h>
+
+void swap(int a, int b) {
+	int temp;
+	temp = a;
+	a = b;
+	b = temp;
+}
+int main(void) {
+	int a = 5, b = 8;
+	printf("함수호출 전 \n");
+	printf("a: %d b: %d\n", a, b);
+	swap(a, b);
+	printf("함수호출 후 \n");
+	printf("a: %d b: %d\n", a, b);
+
+	return 0;
+}
+return의 특징 : 메모리의 값을 남기는 역할.
+
+★ 함수는 호출 후 사라지기 때문에 값이 바뀌지 않고 
+    전에 있던 a, b의 값이 출력된다.
+
+void swap(int *pa, int *pb){
+	int a = *pa;
+	int b = *pb;
+	*pa = b;
+	*pb = a;
+}
+
+int main(void) {
+	int a = 5, b = 8;
+	printf("함수호출 전 \n");
+	printf("a: %d b: %d\n", a, b);
+	swap(a, b);
+	printf("함수호출 후 \n");
+	printf("a: %d b: %d\n", a, b);
+
+	return 0;
+}
+
+
+void display(int length, char ch){
+  int i;
+
+
+return (n%2==0 ? 1 : 0);
