@@ -1,0 +1,4 @@
+﻿  1_1Tshirt.c
+F:\CodingTest2022\1_1Tshirt\1_1Tshirt.c(1,1): warning C4005: '_CRT_SECURE_NO_WARNINGS': 매크로 재정의
+F:\CodingTest2022\1_1Tshirt\1_1Tshirt.c : message : '_CRT_SECURE_NO_WARNINGS'의 이전 정의를 참조하십시오.
+  1_1Tshirt.vcxproj -> F:\CodingTest2022\x64\Debug\1_1Tshirt.exe

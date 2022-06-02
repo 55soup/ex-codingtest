@@ -1,0 +1,5 @@
+﻿  1_2_Price.c
+F:\CodingTest2022\1_2_Price\1_2_Price.c(6,50): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\CodingTest2022\1_2_Price\1_2_Price.c(7,54): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\CodingTest2022\1_2_Price\1_2_Price.c(8,27): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  1_2_Price.vcxproj -> F:\CodingTest2022\x64\Debug\1_2_Price.exe
